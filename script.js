@@ -22,7 +22,7 @@
 
 
 //strict mode
-// "use strict" - if any mistake occur in your code ,it will show error 
+// "use strict" - if any mistake occur in your code , it will show error 
 // 'use strict'
 // function myFunction()
 // {
@@ -48,6 +48,10 @@
 // let newCountry = [...richCountry,...poorCountry];
 // console.log(newCountry);
 
+// var roll = [1703033,1703035,1703054];
+// var anotherRoll = [...roll,1803035,1903035,200035];
+// // var newRoll = roll.push(anotherRoll);
+// console.log(anotherRoll);
 
 //Es6 Rest Parameters
 
@@ -71,7 +75,16 @@
 //         console.log(x);
 //     }
 // }
+
+//rest parameter
+
+// function restParameter(first, second, ...numbers){
+//     return numbers;
+// }
+// console.log(restParameter(1,2,3,4,5,6,7,8,9));
+
 // restParameter('Rahim','Karim','Salam','Borkot', 'Jabbar');
+
 // function restParameter(...paras)
 // {
 //     let sum = 0;
@@ -83,6 +96,15 @@
 // }
 // console.log(restParameter(10,20,30,40,50,60));
 
+
+// function addTenNumber(...numbers){
+//     let sum = 0;
+//     for (let i of numbers){
+//         sum += i;
+//     }
+//     return sum;
+// }
+// console.log(addTenNumber(1,2,3,4,5,6,7,8,9,10));
 
 //dynamic function 
 //functions using by constructor function
@@ -141,10 +163,10 @@
 // myFunc();
 
 
-// //local scope
+//local scope
 // function myFunc()
 // {
-//     var name = 'md jasim uddim';
+//    var name = 'md jasim uddim';
 // }
 // console.log(name);
 // myFunc();
@@ -158,6 +180,10 @@
 // var name;
 // console.log(name);
 
+
+// name = 'Md Delowar Hossain';
+// var name;
+// console.log(name);
 
 
 //loop in javascript
@@ -207,6 +233,20 @@
 //     }
 // }
 
+
+
+// var car = {
+//     carName: 'BMW',
+//     price:'20 lakh',
+//     speed:'good',
+//     anotherCar:{
+//         carName:'Volvo',
+//         price:'30lakh',
+//         speed:'more first'
+//     }
+// }
+
+// console.log(car.anotherCar['speed']);
 // for(let x in obj)
 // {
 //     console.log(x, " ",obj[x].Bangla);
@@ -269,6 +309,15 @@
 // myFunc(1,2,3,4,4,5,'Jasim','Rahim','Karim');
 
 
+// function studentList(...name){
+//     console.log(name);
+// }
+// studentList('Rahim','karim','Salam','Jabbar');
+
+// function rollList(roll){
+//     console.log(roll);
+// }
+// rollList(1702023)
 //Function Returns 
 
 // function one()
@@ -313,6 +362,29 @@
 //     return obj;
 // }
 // console.log(returnObj());
+
+// function Name(){
+//     return "Md Jasim uddim";
+// }
+
+// function jsName(){
+//     return Name();
+// }
+
+// console.log(jsName());
+
+
+
+// let DetaislOfPerson = {
+//     firstName:'jasim',
+//     lastName:'uddim'
+// }
+
+// function returnDetails(){
+//     return DetaislOfPerson;
+// }
+// console.log(returnDetails());
+
 
 // let person ={
 //     firstName:'md jasim uddim',
@@ -388,6 +460,11 @@
 // var person = (...name) => name;
 // console.log(person('jasim','Rahim','Karim','Salam','Jabbar'));
 
+
+// var func = (...x) => x;
+// console.log(func('jasim','Rahim','Karim','Salam'));
+
+
 //Array in Javascript
 
 //array declaration
@@ -409,6 +486,18 @@
 // console.log(asia[1][2]);
 
 
+
+//Capitals of Asian Country
+
+// var capitalsOfBangladesh = ['Dhaka', 'Rajshahi','Sylhet','Barisal'];
+// var capitalsOfIndia = ['Mumbai', 'Kolkata', 'Delli'];
+// var capitalsOfPakistan = ['Islamabad', 'Lahore','Belustan'];
+
+// var capitalsOfAsia = [capitalsOfBangladesh, capitalsOfIndia, capitalsOfPakistan];
+// console.log(capitalsOfAsia);
+
+// console.log(capitalsOfAsia[0][1]);
+
 //Destructuring
 //Breakdown a complex structure into smaller parts
 // var country = ["Ban","Ind","Pak","Sri","China"];
@@ -422,6 +511,7 @@
 
 // var [a,,,,b] = ['Rahim', 'Ajom', 'Rubel','Salam','Borkot','Mobassir'];
 // console.log(a,b);
+
 // const number = [];
 //  const obj = {
 //     name:'Rahim',
@@ -444,6 +534,16 @@
 // const {person1, age} = obj;
 // console.log(person1);
 // console.log(age);
+
+
+// var obj = {
+//     name:'md jasim uddim',
+//     roll:1703035,
+//     age:23
+// }
+// var {name,,roll} = obj;
+// console.log(name);
+// console.log(roll)
  //Map
 //Map is a collection of data
 // var map = new Map();
@@ -591,3 +691,36 @@
 
 // Named : export - import by using same name 
 //Default : Export -Import by using any name
+
+
+// const studentList = {
+//     name:['Rahim', 'Karim', 'Salam'],
+//     roll:[17929293,628288282,828282],
+//     class:'Bsc Enginnering'
+// }
+// console.log(studentList['name'][0]);
+
+
+/* constructor function */
+function car(name,weight,cost,color,model)
+{
+    this.carName = name,
+    this.carWeight = weight,
+    this.carCost = cost,
+    this.carColor = color,
+    this.carModel = model,
+    this.output = function(){
+        console.log("Car name = "+this.carName);
+        console.log("Car Weight = "+this.carWeight);
+        console.log("Car Cost = "+this.carCost);
+        console.log("Car Color = "+this.carColor);
+        console.log("Car Modal = "+this.carModel);
+
+    }
+}
+var car1 = new car('volvo','600kg',1000,['white','green','red','navyBlue'],'classic');
+console.log(car1.carName);
+console.log(car1.output());
+// var car2 = new car('saab','400kg',8000,['orange','yellow','red','blue'],'modern');
+// console.log(car2.carName);
+// console.log(car2.output());

@@ -22,8 +22,8 @@
 // export  default chinese;
 
 
-const dress = 'Genji';
-function cars(car1,car2){
-    console.log(`I have bought ${car1} and ${car2}`);
-}
-export {dress,cars};
+// const dress = 'Genji';
+// function cars(car1,car2){
+//     console.log(`I have bought ${car1} and ${car2}`);
+// }
+// export {dress,cars};
